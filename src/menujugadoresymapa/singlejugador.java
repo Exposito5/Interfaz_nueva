@@ -5,8 +5,10 @@
  */
 package menujugadoresymapa;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
 import ping_pong_wars.*;
 
 /**
@@ -14,7 +16,7 @@ import ping_pong_wars.*;
  * @author Alex
  */
 public class singlejugador extends javax.swing.JFrame {
- 
+
     /**
      * Creates new form singlejugador
      */
@@ -23,7 +25,7 @@ public class singlejugador extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("War Table Hana");
         this.jArena2.setVisible(false);
-        this.jArena3.setVisible(false); 
+        this.jArena3.setVisible(false);
         this.jButton2.setVisible(false);
         this.jButton3.setVisible(false);
     }
@@ -134,26 +136,26 @@ public class singlejugador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-   
+
         this.jArena1.setVisible(false);
         this.jArena2.setVisible(true);
         this.jArena3.setVisible(false);
         this.jButton2.setVisible(true);
         this.jButton3.setVisible(false);
-       this.jButton1.setVisible(false);
-      
-        
+        this.jButton1.setVisible(false);
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         this.jArena1.setVisible(false);
+        this.jArena1.setVisible(false);
         this.jArena2.setVisible(false);
         this.jArena3.setVisible(true);
         this.jButton2.setVisible(false);
         this.jButton3.setVisible(true);
         this.jButton1.setVisible(false);
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -163,22 +165,27 @@ public class singlejugador extends javax.swing.JFrame {
         this.jArena3.setVisible(false);
         this.jButton2.setVisible(false);
         this.jButton3.setVisible(false);
-       this.jButton1.setVisible(true);
+        this.jButton1.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        Game ga=new Game();
-          ga.setVisible(true);
-          
-         dispose();     
+
+        Game game = new Game();
+        singlejugador jug = new singlejugador();
+        JDialog dialogo = new JDialog(jug,"Titulo");
+        dialogo.add(game);
+        dialogo.setVisible(true);
+        dialogo.setSize(800,500);
+        dialogo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

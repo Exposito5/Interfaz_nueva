@@ -1,5 +1,3 @@
-
-
 package ping_pong_wars;
 
 import java.awt.Color;
@@ -17,17 +15,18 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class Game extends JPanel { 
+public class Game extends JPanel {
+
     private URL url = getClass().getResource("/imagenes/Cielo estrellado.png");
     Image image = new ImageIcon(url).getImage();
 
     Ball ball = new Ball(this);
     Racquet1 rack1 = new Racquet1(this);
-    Racquet2 rack2 = new Racquet2(this);
+    Racquet2 rack2 = new Racquet2(this);   
     int speed = 1;
 
     private int getScore() {
-        return speed -1;
+        return speed - 1;
     }
 
     public Game() {
@@ -58,7 +57,7 @@ public class Game extends JPanel {
     }
 
     @Override
-    public void paint(Graphics g) { 
+    public void paint(Graphics g) {
         g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
         setOpaque(false);
         super.paint(g);
@@ -78,20 +77,28 @@ public class Game extends JPanel {
         JOptionPane.showMessageDialog(this, "your score is: " + getScore(), "GAME OVER", JOptionPane.YES_NO_OPTION);
         System.exit(0);
     }
-
-    public static void main(String[] args) throws InterruptedException {
+    public void m() throws InterruptedException{
+   
+    while (true) {
+        Game game = new Game();
+            game.move();
+            game.repaint();
+            Thread.sleep(10);
+    }
+        }
+    public static void main(String args[]) throws InterruptedException {
         JFrame window = new JFrame("War Table Hana");
         Game game = new Game();
-        window.add(game);
+        /*window.add(game);
         window.pack();
         window.setSize(800, 500);
         window.setVisible(true);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+*/
         
-        while (true) {
-            game.move();
-            game.repaint();
-            Thread.sleep(10);
-        }
+    }
+
+    public void pack() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

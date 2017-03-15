@@ -25,9 +25,9 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
         initComponents();
         setLocationRelativeTo(null);
-       setTitle("War Table Hana");
+        setTitle("War Table Hana");
         setIconImage(new ImageIcon(getClass().getResource("/imagenes/icono.png")).getImage());
-        Sonidos.Fondo.loop();
+        //Sonidos.Fondo.loop();
         this.jButton2.setVisible(false);
         }
 
